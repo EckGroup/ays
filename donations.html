@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations - Aldersgate Youth Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .amount-btn.active { background-color: rgb(245, 158, 11); color: white; border-color: rgb(245, 158, 11); }
+        .payment-tab.active { border-bottom: 3px solid rgb(245, 158, 11); color: rgb(245, 158, 11); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
+                            <i data-lucide="church" class="w-6 h-6 text-amber-400"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-blue-900">Aldersgate Youth</h1>
+                            <p class="text-xs text-gray-600">Service</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Home</a>
+                    <a href="sermons.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Sermons</a>
+                    <a href="groups.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Groups</a>
+                    <a href="news.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">News</a>
+                    <a href="gallery.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Gallery</a>
+                    <a href="enquiries.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Enquiries</a>
+                    <a href="donations.html" class="px-4 py-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition font-medium">Donate</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-blue-900 focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
+                <a href="sermons.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Sermons</a>
+                <a href="groups.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Groups</a>
+                <a href="news.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">News</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Gallery</a>
+                <a href="enquiries.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Enquiries</a>
+                <a href="donations.html" class="block px-3 py-2 text-amber-600 font-medium bg-amber-50 rounded-md">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-blue-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Support Our Mission</h1>
+            <p class="text-xl text-blue-200">Your generosity helps us reach more young people and transform lives</p>
+        </div>
+    </div>
+
+    <!-- Donation Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Impact Section -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="wallet" class="w-8 h-8 text-blue-900"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">General Fund</h3>
+                <p class="text-gray-600">Supports our day-to-day operations, weekly services, and administrative needs.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="globe" class="w-8 h-8 text-amber-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Missions</h3>
+                <p class="text-gray-600">Help us spread the gospel through local and international outreach programs.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="building" class="w-8 h-8 text-green-700"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Building Fund</h3>
+                <p class="text-gray-600">Contribute to building and maintaining our worship and fellowship facilities.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="campground" class="w-8 h-8 text-purple-700"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-2">Youth Camp Scholarship</h3>
+                <p class="text-gray-600">Send young people to camp who cannot afford the fees. Transform lives through retreat experiences.</p>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Donation Form -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-blue-900 mb-6">Make a Donation</h2>
+                
+                <!-- Amount Selection -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-3">Select Amount (GHS)</label>
+                    <div class="grid grid-cols-3 gap-3 mb-3">
+                        <button onclick="selectAmount(50)" class="amount-btn py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:border-amber-500 transition" data-amount="50">GHS 50</button>
+                        <button onclick="selectAmount(100)" class="amount-btn py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:border-amber-500 transition" data-amount="100">GHS 100</button>
+                        <button onclick="selectAmount(200)" class="amount-btn py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:border-amber-500 transition" data-amount="200">GHS 200</button>
+                        <button onclick="selectAmount(500)" class="amount-btn py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:border-amber-500 transition" data-amount="500">GHS 500</button>
+                        <button onclick="selectAmount(1000)" class="amount-btn py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:border-amber-500 transition" data-amount="1000">GHS 1,000</button>
+                        <button onclick="selectAmount('custom')" class="amount-btn py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 hover:border-amber-500 transition" data-amount="custom">Custom</button>
+                    </div>
+                    <div id="custom-amount-container" class="hidden">
+                        <input type="number" id="custom-amount" placeholder="Enter custom amount" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" onchange="updateCustomAmount()">
+                    </div>
+                </div>
+
+                <!-- Donation Type -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-3">Donation Type</label>
+                    <div class="flex gap-4">
+                        <label class="flex-1 cursor-pointer">
+                            <input type="radio" name="donationType" value="one-time" checked class="hidden peer" onchange="toggleDonationType()">
+                            <div class="py-3 text-center border-2 border-gray-300 rounded-lg peer-checked:border-blue-900 peer-checked:bg-blue-50 peer-checked:text-blue-900 transition">
+                                One-time
+                            </div>
+                        </label>
+                        <label class="flex-1 cursor-pointer">
+                            <input type="radio" name="donationType" value="monthly" class="hidden peer" onchange="toggleDonationType()">
+                            <div class="py-3 text-center border-2 border-gray-300 rounded-lg peer-checked:border-blue-900 peer-checked:bg-blue-50 peer-checked:text-blue-900 transition">
+                                Monthly
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Purpose -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Donation Purpose <span class="text-amber-600">*</span></label>
+                    <select id="donationPurpose" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none bg-white">
+                        <option value="">Select a fund</option>
+                        <option value="General Fund">General Fund</option>
+                        <option value="Missions">Missions</option>
+                        <option value="Building Fund">Building Fund</option>
+                        <option value="Youth Camp Scholarship">Youth Camp Scholarship</option>
+                    </select>
+                    <p class="text-sm text-gray-500 mt-2">Choose how you want your donation to be used</p>
+                </div>
+
+                <!-- Personal Details -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Full Name</label>
+                    <input type="text" id="donorName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your name">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Email</label>
+                    <input type="email" id="donorEmail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your email address">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                    <input type="tel" id="donorPhone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your phone number">
+                </div>
+
+                <div class="mb-8">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" id="anonymous" class="w-5 h-5 text-blue-900 rounded focus:ring-blue-900">
+                        <span class="text-gray-700">Make this an anonymous donation</span>
+                    </label>
+                </div>
+
+                <!-- Payment Tabs -->
+                <div class="border-b border-gray-300 mb-6">
+                    <div class="flex">
+                        <button onclick="switchPaymentMethod('mobile')" class="payment-tab active flex-1 py-3 font-medium text-gray-700 hover:text-amber-600 transition" data-method="mobile">Mobile Money</button>
+                        <button onclick="switchPaymentMethod('bank')" class="payment-tab flex-1 py-3 font-medium text-gray-700 hover:text-amber-600 transition" data-method="bank">Bank Transfer</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Money Section -->
+                <div id="mobile-payment" class="payment-section">
+                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                        <p class="text-sm text-gray-600 mb-3">Send Mobile Money to:</p>
+                        <div class="flex items-center justify-between bg-white p-3 rounded-lg border border-gray-300">
+                            <div>
+                                <p class="font-bold text-blue-900">+233 24 084 2844</p>
+                                <p class="text-sm text-gray-600">Aldersgate Youth Service</p>
+                            </div>
+                            <button onclick="copyToClipboard('+233240842844')" class="text-amber-600 hover:text-amber-700">
+                                <i data-lucide="copy" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button onclick="confirmMobilePayment()" class="w-full py-4 bg-amber-500 text-white rounded-lg font-semibold hover:bg-amber-600 transition flex items-center justify-center gap-2">
+                        <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        I've Made the Transfer
+                    </button>
+                </div>
+
+                <!-- Bank Transfer Section -->
+                <div id="bank-payment" class="payment-section hidden">
+                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                        <p class="text-sm text-gray-600 mb-3">Transfer to:</p>
+                        <div class="space-y-3">
+                            <div class="flex justify-between border-b border-gray-300 pb-2">
+                                <span class="text-gray-600">Bank Name:</span>
+                                <span class="font-semibold text-blue-900">Ghana Commercial Bank</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-300 pb-2">
+                                <span class="text-gray-600">Account Name:</span>
+                                <span class="font-semibold text-blue-900">Aldersgate Youth Service</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Account Number:</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-semibold text-blue-900">1234567890123</span>
+                                    <button onclick="copyToClipboard('1234567890123')" class="text-amber-600 hover:text-amber-700">
+                                        <i data-lucide="copy" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Branch:</span>
+                                <span class="font-semibold text-blue-900">Accra Main</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="confirmBankPayment()" class="w-full py-4 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 transition flex items-center justify-center gap-2">
+                        <i data-lucide="building" class="w-5 h-5"></i>
+                        I've Made the Transfer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info Sidebar -->
+            <div class="space-y-6">
+                <div class="bg-blue-900 text-white rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-4">"Give, and it will be given to you"</h3>
+                    <p class="text-blue-200 mb-6">Luke 6:38</p>
+                    <p class="text-gray-300 mb-4">Your giving enables us to continue our mission of reaching young people with the gospel, providing mentorship, and building a community of faith that transforms society.</p>
+                        <div class="mt-4 pt-4 border-t border-blue-800">
+                            <p class="text-sm text-blue-200">Your donation is tax-deductible. A receipt will be emailed to you for your records.</p>
+                        </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Other Ways to Give</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="church" class="w-5 h-5 text-

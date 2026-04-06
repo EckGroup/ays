@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiries - Aldersgate Youth Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .tab-btn.active { background-color: rgb(30, 58, 138); color: white; }
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
+                            <i data-lucide="church" class="w-6 h-6 text-amber-400"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-blue-900">Aldersgate Youth</h1>
+                            <p class="text-xs text-gray-600">Service</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Home</a>
+                    <a href="sermons.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Sermons</a>
+                    <a href="groups.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Groups</a>
+                    <a href="news.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">News</a>
+                    <a href="gallery.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Gallery</a>
+                    <a href="enquiries.html" class="px-3 py-2 text-amber-600 font-medium border-b-2 border-amber-600">Enquiries</a>
+                    <a href="donations.html" class="px-4 py-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition font-medium">Donate</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-blue-900 focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
+                <a href="sermons.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Sermons</a>
+                <a href="groups.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Groups</a>
+                <a href="news.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">News</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Gallery</a>
+                <a href="enquiries.html" class="block px-3 py-2 text-amber-600 font-medium bg-amber-50 rounded-md">Enquiries</a>
+                <a href="donations.html" class="block px-3 py-2 text-amber-600 font-medium hover:bg-amber-50 rounded-md">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-blue-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Enquiries</h1>
+            <p class="text-xl text-blue-200">We'd love to hear from you. Reach out for membership, prayer, counselling, or general inquiries.</p>
+        </div>
+    </div>
+
+    <!-- Enquiries Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Contact Info Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="phone" class="w-6 h-6 text-blue-900"></i>
+                </div>
+                <h3 class="font-bold text-lg text-blue-900 mb-2">Phone</h3>
+                <p class="text-gray-600">+233 24 084 2844</p>
+                <p class="text-gray-500 text-sm mt-1">Mon-Sat, 9am-6pm</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="mail" class="w-6 h-6 text-amber-600"></i>
+                </div>
+                <h3 class="font-bold text-lg text-blue-900 mb-2">Email</h3>
+                <p class="text-gray-600">info@aldersgateyouth.org</p>
+                <p class="text-gray-500 text-sm mt-1">We reply within 24 hours</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="map-pin" class="w-6 h-6 text-green-700"></i>
+                </div>
+                <h3 class="font-bold text-lg text-blue-900 mb-2">Location</h3>
+                <p class="text-gray-600">123 Faith Avenue, Accra</p>
+                <p class="text-gray-500 text-sm mt-1">Behind the Central Market</p>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <button onclick="showForm('membership')" class="tab-btn active px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-medium transition hover:bg-gray-300" data-tab="membership">
+                Become a Member
+            </button>
+            <button onclick="showForm('prayer')" class="tab-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-medium transition hover:bg-gray-300" data-tab="prayer">
+                Prayer Request
+            </button>
+            <button onclick="showForm('counselling')" class="tab-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-medium transition hover:bg-gray-300" data-tab="counselling">
+                Counselling & Advisory
+            </button>
+            <button onclick="showForm('contact')" class="tab-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-medium transition hover:bg-gray-300" data-tab="contact">
+                General Contact
+            </button>
+        </div>
+
+        <!-- Forms Container -->
+        <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+            
+            <!-- Membership Form -->
+            <div id="membership" class="form-section active">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="user-plus" class="w-8 h-8 text-blue-900"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-blue-900 mb-2">Become a Member</h2>
+                    <p class="text-gray-600">Join our community and grow with us in faith</p>
+                </div>
+                
+                <form onsubmit="submitToWhatsApp(event, 'membership')">
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">First Name</label>
+                            <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your first name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Last Name</label>
+                            <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your last name">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your phone number">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                        <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your email (optional)">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Age Group</label>
+                        <select name="ageGroup" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none bg-white">
+                            <option value="">Select age group</option>
+                            <option value="18-25">18-25 years</option>
+                            <option value="26-35">26-35 years</option>
+                            <option value="36-45">36-45 years</option>
+                            <option value="46+">46 years and above</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-medium mb-2">Previous Church (if any)</label>
+                        <input type="text" name="previousChurch" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Previous church name (optional)">
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 transition flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Submit via WhatsApp
+                    </button>
+                </form>
+            </div>
+
+            <!-- Prayer Request Form -->
+            <div id="prayer" class="form-section">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="praying-hands" class="w-8 h-8 text-amber-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-blue-900 mb-2">Prayer Request</h2>
+                    <p class="text-gray-600">Share your prayer needs with our Prayer Tower team</p>
+                </div>
+                
+                <form onsubmit="submitToWhatsApp(event, 'prayer')">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Your Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your full name">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Contact Number</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your phone number (optional)">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Prayer Category</label>
+                        <select name="category" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none bg-white">
+                            <option value="">Select category</option>
+                            <option value="Healing">Healing & Health</option>
+                            <option value="Financial">Financial Breakthrough</option>
+                            <option value="Family">Family & Relationships</option>
+                            <option value="Career">Career & Education</option>
+                            <option value="Spiritual">Spiritual Growth</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-medium mb-2">Prayer Request</label>
+                        <textarea name="request" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none resize-none" placeholder="Describe your prayer request..."></textarea>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" name="confidential" class="w-5 h-5 text-blue-900 rounded focus:ring-blue-900">
+                            <span class="text-gray-700">Keep this request confidential ( Prayer Tower only )</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-amber-500 text-white rounded-lg font-semibold hover:bg-amber-600 transition flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Submit Prayer Request
+                    </button>
+                </form>
+            </div>
+
+            <!-- Counselling Form -->
+            <div id="counselling" class="form-section">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="heart-handshake" class="w-8 h-8 text-green-700"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-blue-900 mb-2">Counselling & Advisory</h2>
+                    <p class="text-gray-600">Speak with our trained counsellors in confidence</p>
+                </div>
+                
+                <form onsubmit="submitToWhatsApp(event, 'counselling')">
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">First Name</label>
+                            <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your first name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Last Name</label>
+                            <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your last name">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Preferred Contact Method</label>
+                        <select name="contactMethod" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none bg-white">
+                            <option value="">Select contact method</option>
+                            <option value="WhatsApp Call">WhatsApp Call</option>
+                            <option value="Phone Call">Phone Call</option>
+                            <option value="In-Person">In-Person Meeting</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Counselling Area</label>
+                        <select name="area" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none bg-white">
+                            <option value="">Select area</option>
+                            <option value="Marriage">Marriage & Relationships</option>
+                            <option value="Career">Career Guidance</option>
+                            <option value="Addiction">Addiction Recovery</option>
+                            <option value="Mental Health">Mental Health & Anxiety</option>
+                            <option value="Financial">Financial Management</option>
+                            <option value="Spiritual">Spiritual Direction</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Preferred Date for Session</label>
+                        <input type="date" name="preferredDate" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-medium mb-2">Brief Description</label>
+                        <textarea name="description" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none resize-none" placeholder="Briefly describe what you'd like to discuss..."></textarea>
+                    </div>
+                    
+                    <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                        <p class="text-sm text-gray-600 flex items-start gap-2">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5"></i>
+                            <span>All counselling sessions are strictly confidential. Our counsellors are trained professionals committed to your privacy and wellbeing.</span>
+                        </p>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Request Counselling
+                    </button>
+                </form>
+            </div>
+
+            <!-- General Contact Form -->
+            <div id="contact" class="form-section">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="message-circle" class="w-8 h-8 text-gray-700"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-blue-900 mb-2">General Enquiry</h2>
+                    <p class="text-gray-600">Have a question? We'd love to hear from you</p>
+                </div>
+                
+                <form onsubmit="submitToWhatsApp(event, 'contact')">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Your Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Full name">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                        <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="email@example.com">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none" placeholder="Your contact number">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Subject</label>
+                        <select name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none bg-white">
+                            <option value="">Select subject</option>
+                            <option value="General Enquiry">General Enquiry</option>
+                            <option value="Event Information">Event Information</option>
+                            <option value="Partnership">Partnership Opportunity</option>
+                            <option value="Volunteering">Volunteering</option>
+                            <option value="Technical Support">Website/Technical Support</option>
+                            <option value="Feedback">Feedback/Suggestion</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-medium mb-2">Message</label>
+                        <textarea name="message" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none resize-none" placeholder="Type your message here..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 transition flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Direct WhatsApp Button -->
+        <div class="text-center mt-12">
+            <p class="text-gray-600 mb-4">Prefer to chat directly?</p>
+            <a href="https://wa.me/233240842844" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-green-500 text-white rounded-full font-semibold hover:bg-green-600 transition">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
+                            <i data-lucide="church" class="w-6 h-6 text-amber-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Aldersgate Youth Service</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">Raising a generation of purpose-driven young people who are committed to God, their community, and making a difference in the world.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-amber-400">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="sermons.html" class="hover:text-white transition">Sermons</a></li>
+                        <li><a href="groups.html" class="hover:text-white transition">Groups</a></li>
+                        <li><a href="news.html" class="hover:text-white transition">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-amber-400">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>+233 24 084 2844</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>info@aldersgateyouth.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Aldersgate Youth Service. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showForm(formId) {
+            // Hide all sections
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(formId).classList.add('active');
+            
+            // Add active class to selected tab
+            document.querySelector(`[data-tab="${formId}"]`).classList.add('active');
+        }
+
+        function submitToWhatsApp(event, formType) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const WHATSAPP_NUMBER = '233240842844';
+            
+            let message = '';
+            
+            switch(formType) {
+                case 'membership':
+                    message = `*New Membership Request - Aldersgate Youth Service*\n\n` +
+                             `*Name:* ${formData.get('firstName')} ${formData.get('lastName')}\n` +
+                             `*Phone:* ${formData.get('phone')}\n` +
+                             `*Email:* ${formData.get('email') || 'Not provided'}\n` +
+                             `*Age Group:* ${formData.get('ageGroup')}\n` +
+                             `*Previous Church:* ${formData.get('previousChurch') || 'None'}\n\n` +
+                             `I would like to become a member of Aldersgate Youth Service.`;
+                    break;
+                    
+                case 'prayer':
+                    const confidential = formData.get('confidential') ? 'Yes - Keep Confidential' : 'No - Can be shared with prayer team';
+                    message = `*Prayer Request - Aldersgate Youth Service*\n\n` +
+                             `*From:* ${formData.get('name')}\n` +
+                             `*Contact:* ${formData.get('phone') || 'Not provided'}\n` +
+                             `*Category:* ${formData.get('category')}\n` +
+                             `*Confidential:* ${confidential}\n\n` +
+                             `*Prayer Request:*\n${formData.get('request')}`;
+                    break;
+                    
+                case 'counselling':
+                    message = `*Counselling Request - Aldersgate Youth Service*\n\n` +
+                             `*Name:* ${formData.get('firstName')} ${formData.get('lastName')}\n` +
+                             `*Contact Method:* ${formData.get('contactMethod')}\n` +
+                             `*Area:* ${formData.get('area')}\n` +
+                             `*Preferred Date:* ${formData.get('preferredDate') || 'Flexible'}\n\n` +
+                             `*Description:*\n${formData.get('description')}`;
+                    break;
+                    
+                case 'contact':
+                    message = `*General Enquiry - Aldersgate Youth Service*\n\n` +
+                             `*Name:* ${formData.get('name')}\n` +
+                             `*Email:* ${formData.get('email') || 'Not provided'}\n` +
+                             `*Phone:* ${formData.get('phone') || 'Not provided'}\n` +
+                             `*Subject:* ${formData.get('subject')}\n\n` +
+                             `*Message:*\n${formData.get('message')}`;
+                    break;
+            }
+            
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+            
+            // Optional: Reset form after submission
+            form.reset();
+        }
+    </script>
+</body>
+</html>
