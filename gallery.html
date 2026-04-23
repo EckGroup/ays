@@ -62,136 +62,6 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <div class="bg-blue-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
-            <p class="text-xl text-blue-200">Moments captured from our services, events, and community activities</p>
-        </div>
-    </div>
-
-    <!-- Gallery Filter -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="flex flex-wrap justify-center gap-3 mb-8">
-            <button onclick="filterGallery('all')" class="filter-btn px-6 py-2 bg-blue-900 text-white rounded-full font-medium transition hover:bg-blue-800" data-filter="all">All</button>
-            <button onclick="filterGallery('services')" class="filter-btn px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-medium transition hover:bg-gray-300" data-filter="services">Services</button>
-            <button onclick="filterGallery('events')" class="filter-btn px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-medium transition hover:bg-gray-300" data-filter="events">Events</button>
-            <button onclick="filterGallery('groups')" class="filter-btn px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-medium transition hover:bg-gray-300" data-filter="groups">Groups</button>
-            <button onclick="filterGallery('outreach')" class="filter-btn px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-medium transition hover:bg-gray-300" data-filter="outreach">Outreach</button>
-        </div>
-
-        <!-- Gallery Grid -->
-        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <!-- Services Images -->
-            <div class="gallery-item group services relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/church/640x360/301" alt="Sunday Service" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Sunday Celebration</h3>
-                    <p class="text-gray-300 text-sm">Weekly Youth Service</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group services relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/people/640x360/302" alt="Worship" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Worship Session</h3>
-                    <p class="text-gray-300 text-sm">Echoes of Praise Leading</p>
-                </div>
-            </div>
-
-            <!-- Events Images -->
-            <div class="gallery-item group events relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/event/640x360/303" alt="Youth Conference" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Youth Conference 2023</h3>
-                    <p class="text-gray-300 text-sm">Annual Gathering</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group events relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/concert/640x360/304" alt="Concert" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Praise Night</h3>
-                    <p class="text-gray-300 text-sm">Special Worship Event</p>
-                </div>
-            </div>
-
-            <!-- Groups Images -->
-            <div class="gallery-item group groups relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/people/640x360/305" alt="Group Meeting" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Group 3 Fellowship</h3>
-                    <p class="text-gray-300 text-sm">Bible Study Session</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group groups relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/technology/640x360/306" alt="Media Team" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Media Team</h3>
-                    <p class="text-gray-300 text-sm">Behind the Scenes</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group groups relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/indoor/640x360/307" alt="Prayer Tower" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Prayer Tower Vigil</h3>
-                    <p class="text-gray-300 text-sm">Friday Night Prayer</p>
-                </div>
-            </div>
-
-            <!-- Outreach Images -->
-            <div class="gallery-item group outreach relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/outdoor/640x360/308" alt="Community Outreach" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Community Clean-up</h3>
-                    <p class="text-gray-300 text-sm">Serving Our Neighborhood</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group outreach relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/people/640x360/309" alt="Food Distribution" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Food Distribution</h3>
-                    <p class="text-gray-300 text-sm">Helping the Vulnerable</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group services relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/church/640x360/310" alt="Baptism" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Water Baptism</h3>
-                    <p class="text-gray-300 text-sm">New Believers</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group events relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/concert/640x360/311" alt="Drama" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Drama & Dance</h3>
-                    <p class="text-gray-300 text-sm">Creative Ministry</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group groups relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/people/640x360/312" alt="Ushers" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Ushering Team</h3>
-                    <p class="text-gray-300 text-sm">Welcome Ministry</p>
-                </div>
-            </div>
-
-            <div class="gallery-item group events relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
-                <img src="http://static.photos/education/640x360/313" alt="Workshop" class="w-full h-64 object-cover transition duration-500">
-                <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition duration-300 flex flex-col justify-end p-4">
-                    <h3 class="text-white font-bold text-lg">Career Workshop</h3>
-                    <p class="text-gray-300 text-sm">Professional Development</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Lightbox Modal -->
     <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4">
         <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-amber-400 transition">
@@ -200,6 +70,13 @@
         <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg">
         <div id="lightbox-caption" class="absolute bottom-4 left-0 right-0 text-center text-white"></div>
     </div>
+
+    <iframe src="https://drive.google.com/embeddedfolderview?id=1AK7LYIsnjhns4wMZLr2ettlEOePVoMJU#grid" 
+        width="100%" 
+        height="600" 
+        frameborder="0">
+    </iframe>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 mt-12">
@@ -225,16 +102,20 @@
                     </ul>
                 </div>
                 
-                <div>
+              <div>
                     <h4 class="font-bold text-lg mb-4 text-amber-400">Contact</h4>
                     <ul class="space-y-3 text-gray-400">
                         <li class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span>Fiifi- Winger, Kasoa</span>
+                        </li>
+                        <li class="flex items-center gap-2">
                             <i data-lucide="phone" class="w-4 h-4"></i>
-                            <span>+233 24 084 2844</span>
+                            <span>+233240842844 <br> +233244234248 <br> +233553331387</span>
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="mail" class="w-4 h-4"></i>
-                            <span>info@aldersgateyouth.org</span>
+                            <span>aldersgateyouthservice@gmail.com</span>
                         </li>
                     </ul>
                 </div>
