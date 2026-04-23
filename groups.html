@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Aldersgate Youth Service</title>
+    <title>Groups - Aldersgate Youth Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        .gallery-item:hover .overlay { opacity: 1; }
-        .gallery-item:hover img { transform: scale(1.05); }
+        .group-card:hover .group-icon { transform: scale(1.1) rotate(5deg); }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -34,9 +33,9 @@
                 <div class="hidden md:flex items-center space-x-1">
                     <a href="index.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Home</a>
                     <a href="sermons.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Sermons</a>
-                    <a href="groups.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Groups</a>
+                    <a href="groups.html" class="px-3 py-2 text-amber-600 font-medium border-b-2 border-amber-600">Groups</a>
                     <a href="news.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">News</a>
-                    <a href="gallery.html" class="px-3 py-2 text-amber-600 font-medium border-b-2 border-amber-600">Gallery</a>
+                    <a href="gallery.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Gallery</a>
                     <a href="enquiries.html" class="px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition">Enquiries</a>
                     <a href="donations.html" class="px-4 py-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition font-medium">Donate</a>
                 </div>
@@ -53,30 +52,226 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
                 <a href="sermons.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Sermons</a>
-                <a href="groups.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Groups</a>
+                <a href="groups.html" class="block px-3 py-2 text-amber-600 font-medium bg-amber-50 rounded-md">Groups</a>
                 <a href="news.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">News</a>
-                <a href="gallery.html" class="block px-3 py-2 text-amber-600 font-medium bg-amber-50 rounded-md">Gallery</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Gallery</a>
                 <a href="enquiries.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Enquiries</a>
                 <a href="donations.html" class="block px-3 py-2 text-amber-600 font-medium hover:bg-amber-50 rounded-md">Donate</a>
             </div>
         </div>
     </nav>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4">
-        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-amber-400 transition">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg">
-        <div id="lightbox-caption" class="absolute bottom-4 left-0 right-0 text-center text-white"></div>
+    <!-- Header -->
+    <div class="bg-blue-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Groups</h1>
+            <p class="text-xl text-blue-200">Find your community and grow together in faith, friendship, and purpose</p>
+        </div>
     </div>
 
-    <iframe src="https://drive.google.com/embeddedfolderview?id=1AK7LYIsnjhns4wMZLr2ettlEOePVoMJU#grid" 
-        width="100%" 
-        height="600" 
-        frameborder="0">
-    </iframe>
+    <!-- Groups Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Group 1 -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Group 1')">
+                <div class="h-2 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="users" class="w-7 h-7 text-blue-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Faith</h3>
+                    <p class="text-gray-600 mb-4">A vibrant community of young professionals focused on career growth and spiritual development.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Meets: Tuesdays, 6:30 PM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Group 2 -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Group 2')">
+                <div class="h-2 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="users" class="w-7 h-7 text-blue-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">The Saints JGM</h3>
+                    <p class="text-gray-600 mb-4">University students and recent graduates navigating life transitions with faith.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Meets: Wednesdays, 5:00 PM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group 3 -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Group 3')">
+                <div class="h-2 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="users" class="w-7 h-7 text-blue-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Humble Servants</h3>
+                    <p class="text-gray-600 mb-4">Young married couples building strong foundations for their families and faith.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Meets: Fridays, 7:00 PM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group 4 -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Group 4')">
+                <div class="h-2 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="users" class="w-7 h-7 text-blue-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Grace</h3>
+                    <p class="text-gray-600 mb-4">Creative professionals and artists using their talents to glorify God.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Meets: Saturdays, 4:00 PM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group 5 -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Group 5')">
+                <div class="h-2 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="users" class="w-7 h-7 text-blue-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Zoe</h3>
+                    <p class="text-gray-600 mb-4">Entrepreneurs and business leaders integrating biblical principles into their ventures.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Meets: Sundays, 2:00 PM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Echoes of Praise -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Echoes of Praise')">
+                <div class="h-2 bg-gradient-to-r from-amber-500 to-amber-600"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="music" class="w-7 h-7 text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Echoes of Praise</h3>
+                    <p class="text-gray-600 mb-4">Our music ministry team leading worship and creating heavenly soundscapes.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Rehearsals: Thursdays, 6:00 PM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Media Team -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Media Team')">
+                <div class="h-2 bg-gradient-to-r from-purple-600 to-purple-800"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="video" class="w-7 h-7 text-purple-800"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Media Team</h3>
+                    <p class="text-gray-600 mb-4">Technical experts handling sound, visuals, live streaming, and digital content creation.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Meets: Saturdays, 10:00 AM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ushers -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Ushers')">
+                <div class="h-2 bg-gradient-to-r from-green-600 to-green-800"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="hand-helping" class="w-7 h-7 text-green-800"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Ushers</h3>
+                    <p class="text-gray-600 mb-4">The welcoming face of our church, ensuring everyone feels at home during services.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Training: Sundays, 8:00 AM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drama and Dance -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Drama and Dance')">
+                <div class="h-2 bg-gradient-to-r from-pink-600 to-pink-800"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="theater" class="w-7 h-7 text-pink-800"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Drama and Dance</h3>
+                    <p class="text-gray-600 mb-4">Expressing God's word through powerful performances, skits, and dance ministries.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Rehearsals: Tuesdays, 5:00 PM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prayer Tower -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Prayer Tower')">
+                <div class="h-2 bg-gradient-to-r from-red-700 to-red-900"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="tower-control" class="w-7 h-7 text-red-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Prayer Tower</h3>
+                    <p class="text-gray-600 mb-4">Intercessors committed to lifting the church, community, and nations in prayer.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Meets: Fridays, 10:00 PM</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events -->
+            <div class="group-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="joinGroup('Events Team')">
+                <div class="h-2 bg-gradient-to-r from-orange-500 to-orange-700"></div>
+                <div class="p-6">
+                    <div class="group-icon w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-4 transition-transform duration-300">
+                        <i data-lucide="calendar" class="w-7 h-7 text-orange-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Events Team</h3>
+                    <p class="text-gray-600 mb-4">Creative planners and organizers who bring our conferences, programs, and socials to life.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500">Meets: As scheduled</span>
+                        <span class="text-amber-600 font-medium flex items-center gap-1">
+                            Join <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 mt-12">
@@ -97,12 +292,12 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="index.html" class="hover:text-white transition">Home</a></li>
                         <li><a href="sermons.html" class="hover:text-white transition">Sermons</a></li>
-                        <li><a href="groups.html" class="hover:text-white transition">Groups</a></li>
                         <li><a href="news.html" class="hover:text-white transition">News & Events</a></li>
+                        <li><a href="enquiries.html" class="hover:text-white transition">Contact Us</a></li>
                     </ul>
                 </div>
                 
-              <div>
+                <div>
                     <h4 class="font-bold text-lg mb-4 text-amber-400">Contact</h4>
                     <ul class="space-y-3 text-gray-400">
                         <li class="flex items-center gap-2">
@@ -134,51 +329,11 @@
             menu.classList.toggle('hidden');
         }
 
-        function filterGallery(category) {
-            const items = document.querySelectorAll('.gallery-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
-            // Update button styles
-            buttons.forEach(btn => {
-                if (btn.dataset.filter === category) {
-                    btn.classList.remove('bg-gray-200', 'text-gray-700');
-                    btn.classList.add('bg-blue-900', 'text-white');
-                } else {
-                    btn.classList.remove('bg-blue-900', 'text-white');
-                    btn.classList.add('bg-gray-200', 'text-gray-700');
-                }
-            });
-            
-            // Filter items
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+        function joinGroup(groupName) {
+            const message = `Hello, I'm interested in joining ${groupName} at Aldersgate Youth Service. Please provide me with more information.`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/233240842844?text=${encodedMessage}`, '_blank');
         }
-
-        function openLightbox(element) {
-            const img = element.querySelector('img');
-            const caption = element.querySelector('h3').textContent;
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            
-            lightboxImg.src = img.src;
-            lightboxCaption.textContent = caption;
-            lightbox.classList.remove('hidden');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.add('hidden');
-        }
-
-        // Close lightbox on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
     </script>
 </body>
 </html>
